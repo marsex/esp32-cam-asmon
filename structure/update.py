@@ -76,4 +76,14 @@ def remote(file_name,file_dir,from_url):
       print("error: didn't found",file_name)
   except:
     print('error: getting git file')
+    
 
+def read_remote(file_name,dir_url):
+  print(color.blue, '\Reading',file_name,'from',dir_url,'\n')
+  try:
+    remote_file=urequests.get(dir_url+file_name)
+    return remote_file
+  except:
+    print(color.red, 'error reading remote file')
+    return 'error reading remote file'
+  
